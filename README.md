@@ -15,7 +15,7 @@ Then visit http://localhost:8000. No package installation or build is needed.
 ## Rules
 
 - Select an empty square. The board locks during its battle.
-- Each side starts with 2 health. Alien moves follow Laser → Shield → Claw.
+- Each side starts with 2 health. Each exchange independently chooses Laser, Shield, or Claw with equal probability; repeats are allowed.
 - Shield counters Laser; Blast counters Shield; Dodge counters Claw.
 - A correct response damages the alien; a wrong response damages you.
 - Choose once, then press Next exchange. At zero health, the fight ends immediately.

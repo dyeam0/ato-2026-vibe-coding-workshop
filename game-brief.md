@@ -9,7 +9,7 @@ The player chooses an empty square and answers a short alien attack. Winning the
 ## First version
 - One player, one 3-by-3 board, and one battle at a time.
 - Each battle starts with two health points for the player and two for the alien.
-- The alien cycles through Laser, Shield, Claw; the matching player responses are Shield, Blast, Dodge.
+- Each exchange randomly chooses Laser, Shield, or Claw with equal probability; the matching player responses are Shield, Blast, Dodge. Repeats are allowed.
 - One accepted response changes exactly one side's health by one point.
 - A finished battle resolves its selected square once, then returns to the board or ends the game.
 - Restart game clears the board and any current battle.
@@ -35,4 +35,4 @@ This is a fictional game. Assume one player, no accounts, no network play, no sa
 8. The complete loop is playable: Start → choose square → battle → result → continue or restart.
 
 ## Out of scope for the first version
-Timers, random attacks, extra attack types, animation effects, sound, accounts, databases, multiplayer, leaderboards, paid APIs, and external asset libraries.
+Timers, extra attack types, animation effects, sound, accounts, databases, multiplayer, leaderboards, paid APIs, and external asset libraries.

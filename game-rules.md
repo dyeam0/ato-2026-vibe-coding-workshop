@@ -13,7 +13,7 @@ Win a battle to place X in the selected square. Lose a battle and the alien clai
 
 ## Battle
 - Every battle starts with Player health 2/2 and Alien health 2/2.
-- Alien moves are predictable and reset to Laser at the beginning of each battle: Laser → Shield → Claw.
+- Each battle opening and each subsequent exchange independently chooses Laser, Shield, or Claw with equal probability (one third each). Repeats are allowed; there is no fixed opening or cycle. An attack is selected once when that exchange begins and remains fixed until Next exchange, even when help is opened.
 - Responses: Shield counters Laser; Blast counters Shield; Dodge counters Claw.
 - A correct response removes one alien health point. Any other response removes one player health point. Exactly one side loses one point per accepted response; no retaliation or simultaneous damage occurs.
 - Accept only one response per exchange. Then disable the response buttons and explain the result.
@@ -50,8 +50,8 @@ Win a battle to place X in the selected square. Lose a battle and the alien clai
 Play again clears all nine cells, pending cell, health, exchange number, selected response, and old feedback. A new game starts from the empty board. Restarting repeatedly must not create duplicate actions or stale controls.
 
 ## Completion checks
-- Win a battle with Shield, Blast; exactly one X appears in the selected square.
-- Lose a battle with Blast, Shield; exactly one O appears in the selected square.
+- Win a battle by choosing the displayed move’s correct counter twice; exactly one X appears in the selected square.
+- Lose a battle by choosing an incorrect counter twice; exactly one O appears in the selected square.
 - Repeatedly activate a response before Next exchange; only one damage event is accepted.
 - Try an occupied cell and try a second cell during a battle; neither starts another battle.
 - Check all eight lines, a full-board draw, and a last-cell line that should count as a win rather than a draw.
