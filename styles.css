@@ -1,0 +1,108 @@
+
+#alien-game{color-scheme:light dark;font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:light-dark(#182c48,#edf4ff)}
+#alien-game *{box-sizing:border-box}
+#alien-game .game{--g-blue:#397ef0;--g-orange:#ff9138;--g-bg:light-dark(#edf3fc,#071429);--g-panel:light-dark(#fff,#10223e);--g-cell:light-dark(#e8f0fd,#162f52);--g-line:light-dark(#cbd9ed,#2b4363);--g-text:light-dark(#182c48,#edf4ff);--g-muted:light-dark(#4b6181,#aac0df);background:var(--g-bg);padding:28px;border-radius:20px;min-height:0;overflow:hidden;position:relative}
+#alien-game button{font:inherit;color:inherit;cursor:pointer}
+#alien-game button:focus-visible{outline:3px solid var(--g-orange);outline-offset:4px}
+#alien-game button:disabled{cursor:default}
+#alien-game .mast{display:flex;align-items:center;gap:10px;padding-right:0;flex-wrap:wrap}
+#alien-game .brand{width:27px;height:27px;background:var(--g-orange);border-radius:9px;display:grid;place-items:center;color:#122646;font-weight:800}
+#alien-game .eyebrow{font-size:11px;letter-spacing:2px;font-weight:700;color:var(--g-muted)}
+#alien-game .hero{display:flex;justify-content:space-between;gap:16px;align-items:center;margin:30px 0 24px}
+#alien-game h1{font-size:clamp(27px,4vw,40px);font-weight:800;line-height:1.08;letter-spacing:-1.5px;margin:0 0 10px;color:var(--g-text)}
+#alien-game h1 em{font-style:normal;color:light-dark(#aa4500,var(--g-orange))}
+#alien-game p{margin:0;line-height:1.5;font-size:14px}
+#alien-game .lede{color:var(--g-muted);max-width:380px}
+#alien-game .tag{font-size:11px;letter-spacing:1px;font-weight:700;border:1px solid var(--g-line);border-radius:20px;padding:7px 10px;white-space:nowrap}
+#alien-game .layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.04fr);gap:20px}
+#alien-game .panel{background:var(--g-panel);border:1px solid var(--g-line);border-radius:16px;padding:20px;min-width:0}
+#alien-game .panel-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:16px;font-size:12px;color:var(--g-muted)}
+#alien-game .panel-head strong{color:var(--g-text);font-weight:650}
+#alien-game .board{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:330px;margin:auto}
+#alien-game .cell{aspect-ratio:1;border:1px solid transparent;border-radius:12px;background:var(--g-cell);display:grid;place-items:center;position:relative;min-width:0;min-height:55px}
+#alien-game .cell:not(:disabled):hover{border-color:var(--g-blue);background:color-mix(in srgb,var(--g-blue) 20%,var(--g-panel))}
+#alien-game .cell.pending{border:2px solid var(--g-orange);background:color-mix(in srgb,var(--g-orange) 12%,var(--g-panel))}
+#alien-game .cell.pending:after{content:'…';font-size:26px;color:light-dark(#9f4200,var(--g-orange))}
+#alien-game .cell.winline{box-shadow:inset 0 0 0 2px var(--g-orange)}
+#alien-game .cell small{color:var(--g-muted);opacity:.55;font-size:11px}
+#alien-game .mark-x{width:36px;height:36px;position:relative;display:block}
+#alien-game .mark-x:before,#alien-game .mark-x:after{content:'';position:absolute;left:15px;top:0;width:6px;height:36px;border-radius:4px;background:var(--g-blue);transform:rotate(45deg)}
+#alien-game .mark-x:after{transform:rotate(-45deg)}
+#alien-game .mark-o{width:33px;height:33px;border:6px solid var(--g-orange);border-radius:50%;display:block}
+#alien-game .legend{display:flex;justify-content:center;gap:24px;margin-top:17px;font-size:12px;color:var(--g-muted)}
+#alien-game .legend span{display:flex;gap:7px;align-items:center}
+#alien-game .legend b{font-size:18px;color:var(--g-blue)}
+#alien-game .legend span+span b{color:light-dark(#a64a00,var(--g-orange))}
+#alien-game .battle{text-align:center;display:flex;flex-direction:column;min-height:365px}
+#alien-game .battle h2{font-size:22px;letter-spacing:-.5px;margin:12px 0 7px;font-weight:750;line-height:1.2}
+#alien-game .battle .sub{font-size:13px;color:var(--g-muted);max-width:340px;margin:0 auto}
+#alien-game .alien{width:94px;height:74px;background:var(--g-orange);border-radius:40% 40% 46% 46%;position:relative;margin:20px auto 12px;transform:rotate(-5deg);box-shadow:0 7px 0 color-mix(in srgb,var(--g-orange) 45%,transparent)}
+#alien-game .alien:before,#alien-game .alien:after{content:'';width:24px;height:30px;background:#132b48;border-radius:70% 10% 65% 20%;position:absolute;top:22px;left:14px;transform:rotate(-12deg)}
+#alien-game .alien:after{left:auto;right:14px;transform:scaleX(-1) rotate(-12deg)}
+#alien-game .alien .antenna{position:absolute;width:4px;height:23px;background:var(--g-orange);top:-15px;left:24px;transform:rotate(-25deg);border-radius:3px}
+#alien-game .alien .antenna:after{content:'';position:absolute;width:10px;height:10px;background:var(--g-orange);border-radius:50%;top:-4px;left:-3px}
+#alien-game .alien .antenna.second{left:auto;right:24px;transform:rotate(25deg)}
+#alien-game .healths{display:flex;justify-content:space-between;gap:15px;text-align:left;margin-bottom:4px;font-size:12px}
+#alien-game .hp{display:flex;gap:4px;margin-top:7px}
+#alien-game .hp i{height:6px;width:34px;border-radius:5px;background:var(--g-blue)}
+#alien-game .hp.alien-hp i{background:var(--g-orange)}
+#alien-game .hp i.empty{background:var(--g-line)}
+#alien-game .primary{background:var(--g-orange);color:#17283c;border:0;border-radius:9px;padding:13px 20px;font-weight:750;min-height:44px}
+#alien-game .primary:hover{filter:brightness(1.05)}
+#alien-game .action{margin-top:auto;padding-top:20px}
+#alien-game .responses{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:18px}
+#alien-game .response{padding:11px 4px;border:1px solid var(--g-line);border-radius:9px;background:var(--g-cell);font-size:12px;min-height:54px;font-weight:600}
+#alien-game .response:hover:not(:disabled){border-color:var(--g-orange)}
+#alien-game .response:disabled{opacity:.45}
+#alien-game .response.chosen{opacity:1;border-color:var(--g-orange)}
+#alien-game .response .symbol{font-size:19px;display:block;margin-bottom:4px}
+#alien-game .guide{margin-top:18px;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;color:var(--g-muted);font-size:11px}
+#alien-game .guide span{padding:6px 7px;border-radius:6px;background:var(--g-cell)}
+#alien-game .status{min-height:42px;padding:10px 2px 0;color:var(--g-muted);font-size:12px;text-align:center}
+#alien-game .footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px;font-size:11px;color:var(--g-muted)}
+#alien-game .reset{background:transparent;border:0;padding:9px 0;color:var(--g-muted);font-size:12px;min-height:44px;text-decoration:underline;text-underline-offset:4px}
+#alien-game .focus{min-height:0}
+#alien-game .focus .hero{margin-top:22px}
+#alien-game .focus .layout{display:block;max-width:430px;margin:auto}
+#alien-game .focus .board-panel{max-width:430px;margin:auto}
+#alien-game .focus .battle{min-height:365px}
+#alien-game .focus .hero .tag{display:none}
+#alien-game .focus .panel{border-top:3px solid var(--g-blue)}
+#alien-game [hidden]{display:none!important}
+@media(max-width:570px){#alien-game .game{padding:20px 15px;min-height:0}#alien-game .layout{grid-template-columns:1fr;gap:14px}#alien-game .hero{margin-top:24px}#alien-game .tag{display:none}#alien-game .panel{padding:16px}#alien-game .battle{min-height:335px}#alien-game .focus .layout{max-width:100%}#alien-game .focus{min-height:0}#alien-game .footer{align-items:flex-start}#alien-game .board{max-width:285px}}
+
+:root { color-scheme: dark; background: #061021; }
+body { margin: 0; padding: clamp(12px, 4vw, 42px); font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+#alien-game { max-width: 1000px; margin: 0 auto; }
+#alien-game .game { padding: clamp(18px, 4vw, 38px); border: 1px solid #243c5f; box-shadow: 0 24px 70px #0004; }
+#alien-game .layout { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 24px; }
+#alien-game .board { max-width: 400px; }
+#alien-game .battle { min-height: 420px; }
+#alien-game .panel-head { min-height: 20px; }
+#alien-game .cell { min-height: 72px; }
+#alien-game .cell.winline { background: color-mix(in srgb, var(--g-blue) 30%, var(--g-panel)); }
+#alien-game .footer { flex-wrap: wrap; }
+#alien-game .footer-actions { display: flex; gap: 22px; }
+#alien-game .primary { width: 100%; }
+#alien-game .reset { text-decoration: none; }
+#alien-game .reset:hover { color: var(--g-text); }
+#alien-game .response { min-height: 64px; }
+#alien-game .sub { min-height: 40px; }
+#alien-game .battle h2:focus { outline: none; }
+#alien-game .battle h2:focus-visible { outline: 2px solid var(--g-orange); outline-offset: 5px; }
+#alien-game .guide { font-size: 12px; }
+#alien-game .brand { font-size: 20px; }
+#alien-game .healths { font-size: 13px; }
+#alien-game .hp i { width: 38px; height: 8px; }
+#alien-game .pending-label { color: var(--g-orange); font-size: 24px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+#alien-game dialog { color: #edf4ff; background: #10223e; border: 1px solid #385272; border-radius: 18px; padding: 26px; max-width: 480px; width: calc(100% - 32px); }
+#alien-game dialog::backdrop { background: #020917c9; }
+#alien-game dialog h2 { margin-top: 0; }
+#alien-game dialog p { margin: 12px 0; }
+#alien-game dialog table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14px; }
+#alien-game dialog th, #alien-game dialog td { text-align: left; padding: 10px; border-bottom: 1px solid #385272; }
+#alien-game dialog .dialog-actions { display: grid; gap: 10px; margin-top: 20px; }
+#alien-game dialog .reset { color: #aac0df; }
+@media (max-width: 650px) { #alien-game .layout { grid-template-columns: 1fr; gap: 18px; } #alien-game .board { max-width: 360px; } #alien-game .battle { min-height: 375px; } #alien-game .hero { margin-top: 28px; } #alien-game .cell { min-height: 60px; } #alien-game .tag { display: none; } }
+@media (prefers-reduced-motion: no-preference) { #alien-game .cell, #alien-game .response { transition: background-color .15s, border-color .15s; } }
