@@ -19,10 +19,10 @@ The player chooses an empty square and answers a short alien attack. Winning the
 Use an orange-and-blue space theme. Blue should anchor the board and background; orange should highlight the alien, pending cell, and primary actions. Keep text high-contrast and pair color cues with words or symbols so the game remains clear to color-blind players. Use simple CSS shapes; no external artwork is needed.
 
 ## Supplied facts and assets
-The rules and concept come from Mark Hinkle's Vibe Coding for Non-Technical Professionals course repository. No learner-provided artwork, sound, or other game assets have been supplied; the requested orange-and-blue palette is the visual customization. The current learner repository is `dyeam0/ato-2026-vibe-coding-workshop`; it currently contains only a README.
+The rules and concept come from Mark Hinkle's Vibe Coding for Non-Technical Professionals course repository. No learner-provided artwork, sound, or other game assets have been supplied; the requested orange-and-blue palette is the visual customization. The current learner repository is `dyeam0/ato-2026-vibe-coding-workshop`; it now contains the complete static game.
 
 ## Subject and assumptions
-This is a fictional game. Assume one player, no accounts, no network play, no saved scores, and no external services. The featured Alien Tic-Tac-Toe concept is the working choice because Mark's course identifies it as the featured game.
+This is a fictional game. Assume one player, no accounts, no network play, no saved scores, and no external services. Mark confirmed Alien Tic-Tac-Toe as the workshop game; Daniel confirmed the orange-and-blue design and accepted the completed game for this workshop.
 
 ## Observable success checks
 1. Start shows an empty board and no battle is in progress.
