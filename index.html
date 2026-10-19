@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071429">
+  <meta name="description" content="Fight for your square in Alien Tic-Tac-Toe. Counter alien attacks, claim three Xs, and defend your corner of the galaxy.">
+  <title>Alien Tic-Tac-Toe · Orbital Defense</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="engine.js" defer></script>
+  <script src="game.js" defer></script>
+</head>
+<body>
+<main id="alien-game">
+  <div class="game">
+    <div class="mast"><span class="brand" aria-hidden="true">✦</span><span class="eyebrow">Orbital defense / Solo mission</span></div>
+    <header class="hero"><div><h1>Alien <em>Tic-Tac-Toe</em></h1><p class="lede">Fight for your square. Claim three in a row.</p></div><span class="tag">ATO 2026</span></header>
+    <div class="layout">
+      <section class="panel board-panel" aria-labelledby="board-title">
+        <div class="panel-head"><strong id="board-title">Your territory</strong><span id="claimed">0 / 9 claimed</span></div>
+        <div class="board" id="board" aria-label="Tic-tac-toe board"></div>
+        <div class="legend"><span><b>X</b> You</span><span><b>O</b> Aliens</span></div>
+        <p id="board-status" class="status">Your mission begins when you press Start.</p>
+      </section>
+      <section class="panel battle" id="battle" aria-label="Battle station"></section>
+    </div>
+    <footer class="footer"><span>Win a battle → claim X · Lose → claim O<br>No extra alien turn.</span><div class="footer-actions"><button class="reset" type="button" id="help-button">How to play</button><button class="reset" type="button" id="restart-button">Restart game</button></div></footer>
+  </div>
+  <p class="sr-only" id="announcement" role="status" aria-live="polite" aria-atomic="true"></p>
+  <dialog id="help" aria-labelledby="help-title">
+    <h2 id="help-title">How to defend your territory</h2>
+    <p>Choose an empty square to fight for it. A battle win places X; a battle loss places O. There is no extra alien turn.</p>
+    <p>Each battle starts with 2 health per side. A correct response damages the alien; an incorrect response damages you. Choose once, then press Next exchange.</p>
+    <table><thead><tr><th>Alien move</th><th>Your counter</th></tr></thead><tbody><tr><td>Laser</td><td>Shield</td></tr><tr><td>Shield</td><td>Blast</td></tr><tr><td>Claw</td><td>Dodge</td></tr></tbody></table>
+    <p>Three Xs in a row, column, or diagonal win. Three Os lose. A full board without a line is a draw.</p>
+    <p>Use touch, mouse, or Tab and Enter/Space. Restart game clears the entire board and battle.</p>
+    <div class="dialog-actions"><button type="button" class="primary" id="close-help">Back to mission</button><button type="button" class="reset" id="help-restart">Restart game — clear whole board</button></div>
+  </dialog>
+  <noscript><p>Please enable JavaScript to play Alien Tic-Tac-Toe.</p></noscript>
+</main>
+</body>
+</html>
