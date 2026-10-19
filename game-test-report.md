@@ -56,3 +56,9 @@ Every battle opening and every Next exchange now samples Laser, Shield, or Claw 
 - JavaScript syntax and whitespace checks passed.
 
 The distribution checks demonstrate variety and catch fixed or heavily skewed selection; they do not claim cryptographic randomness or require equal counts in a small play session. Physical phone and screen-reader checks remain untested.
+
+# Manual release workflow check — 2026-10-19
+
+Added the visible footer note “Attacks are random. Repeats can happen.” without changing gameplay. Confirmed it appears in the local browser. All 11 engine test groups and git diff --check passed.
+
+GitHub is connected to Vercel with main as the production branch and automatic domain assignment disabled. This commit is intended to trigger an automatic staged build; promotion is reserved for the user. Build and live-domain verification results are recorded separately after the push.
