@@ -27,7 +27,7 @@
       const detail=s.result==='win'?'Three Xs aligned. Your corner of the galaxy is safe.':s.result==='loss'?'Three Os aligned. Regroup and try a new mission.':'The sector is contested. Try again for three in a row.';
       battle.innerHTML = `<div class="panel-head"><strong>Mission complete</strong><span>${s.board.filter(Boolean).length} squares claimed</span></div>${alienArt}${heading(resultTitle())}<p class="sub">${detail}</p><p class="status">${s.feedback}</p>${primary('Play again →','restart')}`;
     } else {
-      const title=s.stage==='summary'?(s.alien===0?'Battle won. Square claimed!':'Battle lost. Alien claims O.'):s.stage==='feedback'?'Impact confirmed.':`Alien uses ${G.MOVES[s.exchange]}`;
+      const title=s.stage==='summary'?(s.alien===0?'Battle won. Square claimed!':'Battle lost. Alien claims O.'):s.stage==='feedback'?'Impact confirmed.':`Alien uses ${G.MOVES[s.moveIndex]}`;
       battle.innerHTML = `<div class="panel-head"><strong>Battle for square ${s.pending+1}</strong><span>Exchange ${s.exchange+1}</span></div><div class="healths">${health('You',s.player)}${health('Alien',s.alien,'alien-hp')}</div>${alienArt}${heading(title)}<p class="sub">${s.feedback || 'Choose the response that counters this attack.'}</p><div class="responses">${['Shield','Blast','Dodge'].map((response,i)=>`<button class="response ${s.chosen===response?'chosen':''}" type="button" data-response="${response}" ${s.stage!=='battle'?'disabled':''}><span class="symbol" aria-hidden="true">${['◈','✹','↝'][i]}</span>${response}</button>`).join('')}</div>${guide}${s.stage==='feedback'?primary('Next exchange →','next'):s.stage==='summary'?primary('Return to board →','return'):''}`;
     }
   }
