@@ -29,7 +29,7 @@ Use mouse, touch, or keyboard Tab and Enter/Space. The counter guide is always v
 
 Import this GitHub repository’s `main` branch into a Vercel project. Choose **Other** as the framework, leave the build command empty, and use the repository root (`.`) as the output directory. The tracked `vercel.json` provides these settings. A v0 project is optional.
 
-Publishing and any production-branch updates can make changes live. Check the intended branch and project before deploying.
+This workshop uses three Vercel projects connected to the same repository: development updates automatically from `main`; staging and production require separate manual promotion. See [DEPLOYMENTS.md](DEPLOYMENTS.md) for addresses, project controls, and the release walkthrough.
 
 ## Check the rules
 

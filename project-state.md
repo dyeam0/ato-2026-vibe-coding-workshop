@@ -9,7 +9,9 @@
 - Design: blue board and background, orange alien and actions, X for player and O for alien, responsive stacked layout on narrow screens.
 - Rules: independent, equally likely Laser/Shield/Claw attacks with 2 health per side, one cell per battle, no automatic opponent turn.
 - Verification: 11 automated test groups passed; browser battle win/loss, board win, replay, mid-battle restart, help preservation, and keyboard selection/response checked. See game-test-report.md.
-- Hosting: https://ato-2026-vibe-coding-workshop.vercel.app/ in the existing Yeam Team Vercel project. GitHub is connected; pushes to main build automatically. Auto-assign Custom Production Domains is disabled, so production builds wait for manual promotion.
-- Pending change: footer clarification, “Attacks are random. Repeats can happen.” This small change verifies the GitHub build workflow; the user will choose when to Promote in Vercel.
-- Release procedure: review the staged build, then manually Promote it in Vercel when approved by the user. The live tagged release is v1.0.1. Preserve the existing v1.0.0 and v1.0.1 tags.
+- Hosting: three Yeam Team Vercel projects connected to this repository, all tracking main. See DEPLOYMENTS.md for permanent addresses.
+- Development: ato-2026-vibe-coding-workshop-development, automatic builds and domain assignment on each successful push.
+- Staging: ato-2026-vibe-coding-workshop-staging, automatic builds with manual Promote to update its permanent address. Initialized with the footer clarification from commit 329fb81.
+- Production: ato-2026-vibe-coding-workshop, automatic builds with manual Promote. The existing live game is preserved during setup.
+- Release procedure: test development, select the desired commit in the staging project's Deployments and Promote, test staging, then select that same commit in the production project and Promote. These are separate project builds and approvals, not an automatic cross-project promotion chain. Preserve the existing release tags.
 - Deferred: physical phone testing, screen-reader testing, optional polish, and the Yeam Team website.

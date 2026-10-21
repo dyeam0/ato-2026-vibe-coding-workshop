@@ -62,3 +62,12 @@ The distribution checks demonstrate variety and catch fixed or heavily skewed se
 Added the visible footer note “Attacks are random. Repeats can happen.” without changing gameplay. Confirmed it appears in the local browser. All 11 engine test groups and git diff --check passed.
 
 GitHub is connected to Vercel with main as the production branch and automatic domain assignment disabled. This commit is intended to trigger an automatic staged build; promotion is reserved for the user. Build and live-domain verification results are recorded separately after the push.
+
+# Three-project release setup — 2026-10-21
+
+- Created development and staging Vercel projects using the full repository name and full -development/-staging project domains.
+- All three projects connect to the same GitHub repository and main branch.
+- Confirmed development automatic domain assignment is enabled; staging uses manual promotion. Initialized staging's first permanent-address deployment without changing production.
+- Verified all three permanent addresses serve the game. Development/staging include the footer note; original production still matches v1.0.1.
+- Added DEPLOYMENTS.md for project selection, Promote controls, same-commit releases, and URL behavior. No game logic changed; git diff --check is the appropriate source check for this documentation-only update.
+- End-to-end GitHub push/build and alias checks are recorded outside the repository after this commit, to avoid creating another verification push.
